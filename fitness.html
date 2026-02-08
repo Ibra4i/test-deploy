@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fitness Workout App</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f172a" />
+    <style>
+      :root {
+        font-family: "Segoe UI", Roboto, Arial, sans-serif;
+        color-scheme: light dark;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: #0b1220;
+        color: #e2e8f0;
+      }
+
+      .hero {
+        padding: 48px 24px 32px;
+        text-align: center;
+        background: radial-gradient(circle at top, #1e293b, #0b1220 70%);
+      }
+
+      .hero h1 {
+        margin: 0 0 12px;
+        font-size: 32px;
+      }
+
+      .hero p {
+        margin: 0 auto;
+        max-width: 520px;
+        opacity: 0.8;
+      }
+
+      .stats {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        padding: 24px;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+      }
+
+      .card h3 {
+        margin: 0 0 8px;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        opacity: 0.7;
+      }
+
+      .card strong {
+        font-size: 24px;
+      }
+
+      .workouts {
+        padding: 0 24px 48px;
+        display: grid;
+        gap: 16px;
+      }
+
+      .workout {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #111827;
+        border-radius: 16px;
+        padding: 16px 20px;
+        gap: 12px;
+      }
+
+      .workout-info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .workout-info span {
+        opacity: 0.7;
+        font-size: 14px;
+      }
+
+      .badge {
+        background: #38bdf8;
+        color: #0b1220;
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 12px;
+      }
+
+      .cta {
+        margin: 0 24px 40px;
+        padding: 20px;
+        background: linear-gradient(135deg, #22c55e, #16a34a);
+        border-radius: 18px;
+        color: #0b1220;
+        text-align: center;
+        font-weight: 600;
+      }
+
+      a.back {
+        display: inline-block;
+        margin: 12px 24px;
+        color: #94a3b8;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="back" href="index.html">← Back to Time Page</a>
+
+    <section class="hero">
+      <h1>Pulse Fitness</h1>
+      <p>Your personal workout planner for strength, cardio, and mobility sessions.</p>
+    </section>
+
+    <section class="stats">
+      <div class="card">
+        <h3>Calories</h3>
+        <strong>540 kcal</strong>
+      </div>
+      <div class="card">
+        <h3>Workouts</h3>
+        <strong>5 / week</strong>
+      </div>
+      <div class="card">
+        <h3>Minutes</h3>
+        <strong>210 min</strong>
+      </div>
+      <div class="card">
+        <h3>Streak</h3>
+        <strong>12 days</strong>
+      </div>
+    </section>
+
+    <section class="workouts">
+      <div class="workout">
+        <div class="workout-info">
+          <strong>Upper Body Strength</strong>
+          <span>45 min • Dumbbells</span>
+        </div>
+        <div class="badge">Today</div>
+      </div>
+      <div class="workout">
+        <div class="workout-info">
+          <strong>HIIT Cardio</strong>
+          <span>30 min • Intervals</span>
+        </div>
+        <div class="badge">Tue</div>
+      </div>
+      <div class="workout">
+        <div class="workout-info">
+          <strong>Core & Mobility</strong>
+          <span>25 min • Stretch</span>
+        </div>
+        <div class="badge">Wed</div>
+      </div>
+    </section>
+
+    <div class="cta">Start today’s session</div>
+  </body>
+</html>
