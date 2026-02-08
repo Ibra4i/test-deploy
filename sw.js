@@ -1,7 +1,8 @@
-const CACHE_NAME = "time-app-v1";
+const CACHE_NAME = "time-app-v2";
 const ASSETS = [
   "/",
   "/index.html",
+  "/fitness.html",
   "/manifest.json",
   "/icon.svg"
 ];
