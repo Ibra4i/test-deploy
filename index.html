@@ -8,6 +8,8 @@
     <link rel="manifest" href="manifest.json" />
     <link rel="icon" href="icon.svg" type="image/svg+xml" />
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@500;700&display=swap");
+
       :root {
         color-scheme: light dark;
         font-family: "Segoe UI", Roboto, Arial, sans-serif;
@@ -107,6 +109,17 @@
         font-size: 12px;
         opacity: 0.7;
       }
+
+      .greeting {
+        margin: 18px 0 6px;
+        font-family: "Cairo", "Segoe UI", sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-align: center;
+        color: #f1faee;
+        text-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+      }
     </style>
   </head>
   <body>
@@ -119,6 +132,7 @@
     </nav>
 
     <div class="card">
+      <div class="greeting">مرحبا إيميليا</div>
       <h1>Current Time</h1>
       <div id="clock">--:--:--</div>
       <div id="date">Loading date...</div>
