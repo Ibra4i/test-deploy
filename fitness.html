@@ -18,7 +18,6 @@
         color: #e2e8f0;
       }
 
-
       .hero {
         padding: 48px 24px 32px;
         text-align: center;
@@ -32,15 +31,21 @@
 
       .hero p {
         margin: 0 auto;
-        max-width: 520px;
+        max-width: 560px;
         opacity: 0.8;
       }
 
-      .stats {
+      a.back {
+        display: inline-block;
+        margin: 12px 24px;
+        color: #94a3b8;
+        text-decoration: none;
+      }
+
+      .container {
+        padding: 0 24px 48px;
         display: grid;
-        gap: 16px;
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        padding: 24px;
+        gap: 20px;
       }
 
       .card {
@@ -50,69 +55,155 @@
         box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
       }
 
-      .card h3 {
-        margin: 0 0 8px;
-        font-size: 16px;
+      .section-title {
+        margin: 0 0 12px;
+        font-size: 18px;
         text-transform: uppercase;
         letter-spacing: 1px;
         opacity: 0.7;
       }
 
-      .card strong {
-        font-size: 24px;
-      }
-
-      .workouts {
-        padding: 0 24px 48px;
+      .plans-grid {
         display: grid;
         gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       }
 
-      .workout {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+      .plan-card {
         background: #111827;
         border-radius: 16px;
-        padding: 16px 20px;
-        gap: 12px;
+        padding: 18px;
+        display: grid;
+        gap: 10px;
       }
 
-      .workout-info {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
+      .plan-card h3 {
+        margin: 0;
+        font-size: 18px;
       }
 
-      .workout-info span {
+      .plan-card p {
+        margin: 0;
         opacity: 0.7;
         font-size: 14px;
       }
 
-      .badge {
-        background: #38bdf8;
-        color: #0b1220;
-        padding: 6px 12px;
-        border-radius: 999px;
-        font-weight: 600;
-        font-size: 12px;
-      }
-
-      .cta {
-        margin: 0 24px 40px;
-        padding: 20px;
-        background: linear-gradient(135deg, #22c55e, #16a34a);
-        border-radius: 18px;
-        color: #0b1220;
-        text-align: center;
-        font-weight: 600;
-      }
-
-      a.back {
+      .tag {
         display: inline-block;
-        margin: 12px 24px;
-        color: #94a3b8;
-        text-decoration: none;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: rgba(56, 189, 248, 0.2);
+        color: #7dd3fc;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .btn {
+        border: none;
+        border-radius: 999px;
+        padding: 10px 16px;
+        font-weight: 600;
+        cursor: pointer;
+        background: #22c55e;
+        color: #0b1220;
+      }
+
+      .btn.ghost {
+        background: transparent;
+        color: #e2e8f0;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .active-header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .active-title {
+        margin: 0;
+        font-size: 22px;
+      }
+
+      .exercise {
+        background: #0f172a;
+        border-radius: 14px;
+        padding: 16px;
+        display: grid;
+        gap: 12px;
+      }
+
+      .exercise h4 {
+        margin: 0;
+      }
+
+      .exercise small {
+        opacity: 0.7;
+      }
+
+      .set-list {
+        display: grid;
+        gap: 6px;
+        font-size: 14px;
+      }
+
+      .set-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr auto;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .set-row input {
+        width: 100%;
+        padding: 8px 10px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(15, 23, 42, 0.8);
+        color: #e2e8f0;
+      }
+
+      .set-actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .timer {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .timer-display {
+        font-size: 32px;
+        font-weight: 600;
+      }
+
+      .timer-buttons {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .history-list,
+      .pr-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .history-item {
+        background: rgba(255, 255, 255, 0.04);
+        padding: 12px 14px;
+        border-radius: 12px;
+      }
+
+      .empty {
+        opacity: 0.6;
+        font-size: 14px;
       }
     </style>
   </head>
@@ -121,52 +212,377 @@
 
     <section class="hero">
       <h1>Pulse Fitness</h1>
-      <p>Your personal workout planner for strength, cardio, and mobility sessions.</p>
+      <p>Browse plans, start a workout, track sets, and save your history locally.</p>
     </section>
 
-    <section class="stats">
-      <div class="card">
-        <h3>Calories</h3>
-        <strong>540 kcal</strong>
-      </div>
-      <div class="card">
-        <h3>Workouts</h3>
-        <strong>5 / week</strong>
-      </div>
-      <div class="card">
-        <h3>Minutes</h3>
-        <strong>210 min</strong>
-      </div>
-      <div class="card">
-        <h3>Streak</h3>
-        <strong>12 days</strong>
-      </div>
-    </section>
+    <main class="container">
+      <section class="card">
+        <h2 class="section-title">Workout Plans</h2>
+        <div id="plans" class="plans-grid"></div>
+      </section>
 
-    <section class="workouts">
-      <div class="workout">
-        <div class="workout-info">
-          <strong>Upper Body Strength</strong>
-          <span>45 min • Dumbbells</span>
+      <section id="active-workout" class="card" hidden>
+        <div class="active-header">
+          <div>
+            <h2 id="active-title" class="active-title">Active Workout</h2>
+            <div id="active-meta" class="empty"></div>
+          </div>
+          <div class="set-actions">
+            <button id="finish-workout" class="btn">Finish & Save</button>
+            <button id="cancel-workout" class="btn ghost">Cancel</button>
+          </div>
         </div>
-        <div class="badge">Today</div>
-      </div>
-      <div class="workout">
-        <div class="workout-info">
-          <strong>HIIT Cardio</strong>
-          <span>30 min • Intervals</span>
-        </div>
-        <div class="badge">Tue</div>
-      </div>
-      <div class="workout">
-        <div class="workout-info">
-          <strong>Core & Mobility</strong>
-          <span>25 min • Stretch</span>
-        </div>
-        <div class="badge">Wed</div>
-      </div>
-    </section>
+        <div id="exercise-list"></div>
+      </section>
 
-    <div class="cta">Start today’s session</div>
+      <section class="card">
+        <h2 class="section-title">Rest Timer</h2>
+        <div class="timer">
+          <div id="timer-display" class="timer-display">00:00</div>
+          <div class="timer-buttons">
+            <button class="btn ghost" data-time="60">60s</button>
+            <button class="btn ghost" data-time="90">90s</button>
+            <button class="btn ghost" data-time="120">120s</button>
+            <input id="custom-time" type="number" min="10" placeholder="Seconds" />
+            <button id="start-custom" class="btn ghost">Start</button>
+            <button id="pause-timer" class="btn ghost">Pause</button>
+            <button id="reset-timer" class="btn ghost">Reset</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Progress (PRs)</h2>
+        <div id="pr-list" class="pr-list"></div>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">History</h2>
+        <div id="history-list" class="history-list"></div>
+        <div class="set-actions" style="margin-top: 12px;">
+          <button id="clear-history" class="btn ghost">Clear History</button>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const plans = [
+        {
+          id: "ppl-push",
+          name: "Push Day",
+          tag: "PPL",
+          description: "Chest, shoulders, triceps",
+          exercises: [
+            { name: "Bench Press", target: "3 x 8-12" },
+            { name: "Overhead Press", target: "3 x 6-10" },
+            { name: "Incline Dumbbell Press", target: "3 x 10" },
+            { name: "Triceps Pushdown", target: "3 x 12-15" },
+          ],
+        },
+        {
+          id: "ppl-pull",
+          name: "Pull Day",
+          tag: "PPL",
+          description: "Back, biceps",
+          exercises: [
+            { name: "Deadlift", target: "3 x 5" },
+            { name: "Lat Pulldown", target: "3 x 8-12" },
+            { name: "Seated Row", target: "3 x 10" },
+            { name: "Biceps Curl", target: "3 x 12" },
+          ],
+        },
+        {
+          id: "ppl-legs",
+          name: "Leg Day",
+          tag: "PPL",
+          description: "Quads, glutes, hamstrings",
+          exercises: [
+            { name: "Back Squat", target: "4 x 6-10" },
+            { name: "Leg Press", target: "3 x 10" },
+            { name: "Romanian Deadlift", target: "3 x 8-12" },
+            { name: "Calf Raises", target: "3 x 15" },
+          ],
+        },
+        {
+          id: "full-body",
+          name: "Full Body",
+          tag: "Full body",
+          description: "Total-body strength",
+          exercises: [
+            { name: "Goblet Squat", target: "3 x 10" },
+            { name: "Push Ups", target: "3 x 12" },
+            { name: "Bent Over Row", target: "3 x 10" },
+            { name: "Plank", target: "3 x 45s" },
+          ],
+        },
+      ];
+
+      const plansEl = document.getElementById("plans");
+      const activeSection = document.getElementById("active-workout");
+      const activeTitle = document.getElementById("active-title");
+      const activeMeta = document.getElementById("active-meta");
+      const exerciseList = document.getElementById("exercise-list");
+      const finishBtn = document.getElementById("finish-workout");
+      const cancelBtn = document.getElementById("cancel-workout");
+      const historyList = document.getElementById("history-list");
+      const prList = document.getElementById("pr-list");
+      const clearHistoryBtn = document.getElementById("clear-history");
+
+      let currentSession = null;
+
+      const loadHistory = () =>
+        JSON.parse(localStorage.getItem("fitnessHistory") || "[]");
+
+      const saveHistory = (history) =>
+        localStorage.setItem("fitnessHistory", JSON.stringify(history));
+
+      const formatDate = (iso) =>
+        new Date(iso).toLocaleString(undefined, {
+          weekday: "short",
+          month: "short",
+          day: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+
+      const calculateVolume = (entries) =>
+        Object.values(entries).flat().reduce((sum, set) => {
+          const reps = Number(set.reps) || 0;
+          const weight = Number(set.weight) || 0;
+          return sum + reps * weight;
+        }, 0);
+
+      const renderPlans = () => {
+        plansEl.innerHTML = "";
+        plans.forEach((plan) => {
+          const card = document.createElement("div");
+          card.className = "plan-card";
+          card.innerHTML = `
+            <span class="tag">${plan.tag}</span>
+            <h3>${plan.name}</h3>
+            <p>${plan.description}</p>
+            <button class="btn" data-plan="${plan.id}">Start Workout</button>
+          `;
+          card.querySelector("button").addEventListener("click", () => startWorkout(plan.id));
+          plansEl.appendChild(card);
+        });
+      };
+
+      const startWorkout = (planId) => {
+        const plan = plans.find((item) => item.id === planId);
+        currentSession = {
+          id: Date.now(),
+          planId: plan.id,
+          planName: plan.name,
+          startTime: new Date().toISOString(),
+          entries: {},
+        };
+        activeTitle.textContent = plan.name;
+        activeMeta.textContent = "Workout in progress";
+        activeSection.hidden = false;
+        renderExercises(plan);
+        activeSection.scrollIntoView({ behavior: "smooth" });
+      };
+
+      const renderExercises = (plan) => {
+        exerciseList.innerHTML = "";
+        plan.exercises.forEach((exercise) => {
+          const sets = currentSession.entries[exercise.name] || [];
+          const exerciseCard = document.createElement("div");
+          exerciseCard.className = "exercise";
+          const setItems = sets
+            .map(
+              (set, index) =>
+                `<div>Set ${index + 1}: ${set.reps} reps @ ${set.weight} kg</div>`
+            )
+            .join("");
+          exerciseCard.innerHTML = `
+            <div>
+              <h4>${exercise.name}</h4>
+              <small>Target: ${exercise.target}</small>
+            </div>
+            <div class="set-list">${setItems || '<div class="empty">No sets logged yet.</div>'}</div>
+            <div class="set-row">
+              <input type="number" min="1" placeholder="Reps" data-field="reps" />
+              <input type="number" min="0" step="0.5" placeholder="Weight (kg)" data-field="weight" />
+              <button class="btn" data-action="add">Add Set</button>
+              <button class="btn ghost" data-action="remove">Remove Last</button>
+            </div>
+          `;
+
+          const addBtn = exerciseCard.querySelector('[data-action="add"]');
+          const removeBtn = exerciseCard.querySelector('[data-action="remove"]');
+          const repsInput = exerciseCard.querySelector('[data-field="reps"]');
+          const weightInput = exerciseCard.querySelector('[data-field="weight"]');
+
+          addBtn.addEventListener("click", () => {
+            const reps = Number(repsInput.value);
+            const weight = Number(weightInput.value);
+            if (!reps || weight < 0) return;
+            const updatedSets = currentSession.entries[exercise.name] || [];
+            updatedSets.push({ reps, weight });
+            currentSession.entries[exercise.name] = updatedSets;
+            repsInput.value = "";
+            weightInput.value = "";
+            renderExercises(plan);
+            updateActiveMeta();
+          });
+
+          removeBtn.addEventListener("click", () => {
+            const updatedSets = currentSession.entries[exercise.name] || [];
+            updatedSets.pop();
+            currentSession.entries[exercise.name] = updatedSets;
+            renderExercises(plan);
+            updateActiveMeta();
+          });
+
+          exerciseList.appendChild(exerciseCard);
+        });
+        updateActiveMeta();
+      };
+
+      const updateActiveMeta = () => {
+        if (!currentSession) return;
+        const volume = calculateVolume(currentSession.entries);
+        activeMeta.textContent = `Volume: ${Math.round(volume)} kg • Started ${formatDate(
+          currentSession.startTime
+        )}`;
+      };
+
+      const finishWorkout = () => {
+        if (!currentSession) return;
+        const volume = calculateVolume(currentSession.entries);
+        const endTime = new Date().toISOString();
+        const history = loadHistory();
+        history.unshift({
+          ...currentSession,
+          endTime,
+          volume,
+        });
+        saveHistory(history);
+        currentSession = null;
+        activeSection.hidden = true;
+        renderHistory();
+        renderPRs();
+      };
+
+      const cancelWorkout = () => {
+        currentSession = null;
+        activeSection.hidden = true;
+      };
+
+      const renderHistory = () => {
+        const history = loadHistory();
+        historyList.innerHTML = "";
+        if (!history.length) {
+          historyList.innerHTML = '<div class="empty">No saved workouts yet.</div>';
+          return;
+        }
+        history.slice(0, 6).forEach((session) => {
+          const item = document.createElement("div");
+          item.className = "history-item";
+          item.innerHTML = `
+            <strong>${session.planName}</strong>
+            <div>${formatDate(session.startTime)}</div>
+            <div>Volume: ${Math.round(session.volume)} kg</div>
+          `;
+          historyList.appendChild(item);
+        });
+      };
+
+      const renderPRs = () => {
+        const history = loadHistory();
+        const prs = {};
+        history.forEach((session) => {
+          Object.entries(session.entries).forEach(([exerciseName, sets]) => {
+            const best = Math.max(...sets.map((set) => Number(set.weight) || 0));
+            prs[exerciseName] = Math.max(prs[exerciseName] || 0, best);
+          });
+        });
+        const prEntries = Object.entries(prs);
+        prList.innerHTML = "";
+        if (!prEntries.length) {
+          prList.innerHTML = '<div class="empty">Log workouts to see PRs.</div>';
+          return;
+        }
+        prEntries.forEach(([exercise, weight]) => {
+          const row = document.createElement("div");
+          row.className = "history-item";
+          row.innerHTML = `<strong>${exercise}</strong><div>PR: ${weight} kg</div>`;
+          prList.appendChild(row);
+        });
+      };
+
+      finishBtn.addEventListener("click", finishWorkout);
+      cancelBtn.addEventListener("click", cancelWorkout);
+      clearHistoryBtn.addEventListener("click", () => {
+        localStorage.removeItem("fitnessHistory");
+        renderHistory();
+        renderPRs();
+      });
+
+      renderPlans();
+      renderHistory();
+      renderPRs();
+
+      let timerInterval = null;
+      let remaining = 0;
+      const timerDisplay = document.getElementById("timer-display");
+      const customTime = document.getElementById("custom-time");
+      const startCustom = document.getElementById("start-custom");
+      const pauseTimer = document.getElementById("pause-timer");
+      const resetTimer = document.getElementById("reset-timer");
+
+      const updateTimerDisplay = () => {
+        const mins = String(Math.floor(remaining / 60)).padStart(2, "0");
+        const secs = String(remaining % 60).padStart(2, "0");
+        timerDisplay.textContent = `${mins}:${secs}`;
+      };
+
+      const startTimer = (seconds) => {
+        remaining = seconds;
+        updateTimerDisplay();
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+          remaining -= 1;
+          if (remaining <= 0) {
+            remaining = 0;
+            clearInterval(timerInterval);
+          }
+          updateTimerDisplay();
+        }, 1000);
+      };
+
+      document.querySelectorAll("[data-time]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          startTimer(Number(btn.dataset.time));
+        });
+      });
+
+      startCustom.addEventListener("click", () => {
+        const seconds = Number(customTime.value);
+        if (seconds > 0) startTimer(seconds);
+      });
+
+      pauseTimer.addEventListener("click", () => {
+        if (timerInterval) {
+          clearInterval(timerInterval);
+          timerInterval = null;
+          return;
+        }
+        if (remaining > 0) {
+          startTimer(remaining);
+        }
+      });
+
+      resetTimer.addEventListener("click", () => {
+        remaining = 0;
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = null;
+        updateTimerDisplay();
+      });
+
+      updateTimerDisplay();
+    </script>
   </body>
 </html>
