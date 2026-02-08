@@ -23,6 +23,37 @@
         color: #f1faee;
       }
 
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 24px;
+        background: rgba(13, 18, 32, 0.8);
+        backdrop-filter: blur(10px);
+      }
+
+      .nav a {
+        color: #f1faee;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 14px;
+        font-size: 14px;
+      }
+
+      .nav-links a {
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+      }
+
       .card {
         text-align: center;
         padding: 40px 48px;
@@ -76,6 +107,14 @@
     </style>
   </head>
   <body>
+    <nav class="nav">
+      <a href="index.html">Time App</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="fitness.html">Fitness</a>
+      </div>
+    </nav>
+
     <div class="card">
       <h1>Current Time</h1>
       <div id="clock">--:--:--</div>
